@@ -28,6 +28,7 @@
         }
         .project {
             background-color: #fff;
+            color: #455a6d;
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 1rem;
@@ -37,7 +38,7 @@
             text-align: center;
         }
         .project:hover {
-            background-color: #f0ebe6;
+            background-color: #eeebeb;
         }
         .project h3 {
             color: #455a6d;
@@ -63,20 +64,22 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            width: 90%; /* Adjust for responsiveness */
+            max-width: 800px; /* Max width of popup */
+            max-height: 80%; /* Max height of popup */
+            overflow-y: auto; /* Vertical scrolling for long content */
             background-color: white;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
             z-index: 1000;
+            scroll-behavior: smooth;
         }
         .popup img {
-            max-width: 100%;
-            height: auto;
+            max-width: 100%; /* Image fits within the popup */
+            height: auto; /* Maintain aspect ratio */
             border-radius: 8px;
             margin-bottom: 1rem;
-        }
-        .popup p {
-            color: #333;
         }
         .popup-close {
             position: absolute;
@@ -105,6 +108,7 @@
         a:hover {
             text-decoration: underline; 
         }
+        
     </style>
 </head>
 <body>
@@ -142,9 +146,9 @@
     <!-- Popups -->
     <div class="popup" id="popup1">
         <button class="popup-close">&times;</button>
-        <img src="https://via.placeholder.com/400" alt="Project 1">
+        <img src="https://dummyimage.com/1200X1000/000/fff" alt="Project 1">
         <h3>ATF Inspections</h3>
-        <p>This project uses inspection data from the Bureau of Alcohol, Tobacco, Firearms and Explosives website. Tools used include Python, Pandas, Matplotlib & Seaborn and Quarto.</p>
+        <p>This project uses inspection data from the Bureau of Alcohol, Tobacco, Firearms and Explosives website. Tools used include Python, Pandas, Matplotlib & Seaborn and Quarto. It can hardly be denied that such a demand quite arbitrarily limits the facts which are to be admitted as possible causes of the events which occur in the real world. This view, which is often quite naively accepted as required by scientific procedure, has some rather paradoxical consequences. We know: of course, with regard to the market and similar social structures, a great many facts which we cannot measure and on which indeed we have only some very imprecise and general information. And because the effects of these facts in any particular instance cannot be confirmed by quantitative evidence, they are simply disregarded by those sworn to admit only what they regard as scientific evidence: they thereupon happily proceed on the fiction that the factors which they can measure are the only ones that are relevant.</p>
     </div>
     <div class="popup" id="popup2">
         <button class="popup-close">&times;</button>
