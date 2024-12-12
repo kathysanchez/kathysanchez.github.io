@@ -6,42 +6,50 @@
     <title>Portfolio</title>
     <style>
         body {
-            font-family: Verdana, Tahoma, Geneva, sans-serif;
+            font-family: "Trebuchet MS", Verdana, Tahoma, Geneva, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #ffffff;
             color: #333;
         }
         header {
-            background-color: #455a6d;
-            color: white;
-            padding: 1rem 2rem;
+            background-color: #f5f5f5; 
+            color: #455a6d;
+            padding: 6rem 0;
             text-align: center;
+            position: relative; /* Make the header the parent for positioning */
         }
         main {
             padding: 2rem;
         }
         .projects {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack items vertically */
+            align-items: stretch; /* Allow items to stretch to the container width */
+            gap: 1rem; /* Add space between the header and cards */
+        }
+        .projects-header {
+            color: #455a6d; /* Same color as .container h1 */
+            margin-top: 2rem; /* Space above the header */
+            margin-bottom: 0; /* Space below the header */
+            margin-left: 6rem; /* Align with .container h1 */
+            margin-right: 6rem; /* Align with .container h1 */
+            text-align: left; /* Force left alignment */
         }
         .project {
+            width: 600px;
             background-color: #fff;
             color: #333;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1rem;
-            flex: 1 1 calc(33.333% - 2rem);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
+            padding: 3rem;
+            margin: 0 auto; /* Center project cards horizontally */
             text-align: center;
+            cursor: pointer;
         }
         .project:hover {
             background-color: #f5f5f5;
         }
         .project h3 {
-            color: #333;
+            color: #455a6d;
         }
         footer {
             background-color: #333;
@@ -50,14 +58,58 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
-        @media (max-width: 768px) {
-            .projects {
-                flex-direction: column;
-            }
-            .project {
-                flex: 1 1 100%;
+        .container h1 {
+            margin-top: 2rem; /* Space above the header */
+            margin-bottom: 1rem; /* Slightly more space below the header */
+            margin-left: 6rem; /* Add white space to the left */
+            margin-right: 6rem; /* Add white space to the right */
+            color: #455a6d; /* Header color */
+            text-align: left; /* Left-align the text */
+        }
+        .container p {
+            margin-top: 0; /* Remove unnecessary space above the paragraph */
+            margin-bottom: 1rem; /* Reduce space below paragraphs */
+            margin-left: 6rem; /* Add white space to the left */
+            margin-right: 6rem; /* Add white space to the right */
+            text-align: left; /* Left-align the text */
+        }
+        .contact h1 {
+            margin-top: 2rem; /* Space above the header */
+            margin-bottom: 1rem; /* Slightly more space below the header */
+            margin-left: 6rem; /* Add white space to the left */
+            margin-right: 6rem; /* Add white space to the right */
+            color: #455a6d; /* Header color */
+            text-align: left; /* Left-align the text */
+        }
+        .contact p {
+            margin-top: 0; /* Remove unnecessary space above the paragraph */
+            margin-bottom: 1rem; /* Reduce space below paragraphs */
+            margin-left: 6rem; /* Add white space to the left */
+            margin-right: 6rem; /* Add white space to the right */
+            text-align: left; /* Left-align the text */
+        }
+        /* Desktop-specific adjustments */
+        @media (min-width: 1024px) {
+            .container h1, .container p, .projects-header, .contact h1, .contact p {
+                margin-left: 10rem; /* Wider white space for larger screens */
+                margin-right: 10rem;
             }
         }
+        /* Tablet-specific adjustments */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .container h1, .container p, .projects-header, .contact h1, .contact p {
+                margin-left: 4rem; /* Moderate white space for tablets */
+                margin-right: 4rem;
+            }
+        }
+        /* Mobile-specific adjustments */
+        @media (max-width: 767px) {
+            .container h1, .container p, .projects-header, .contact h1, .contact p {
+                margin-left: 1rem; /* Narrower margins for small screens */
+                margin-right: 1rem;
+                margin-bottom: 1rem; /* Keep space between elements proportional */
+            }
+        }       
         .popup {
             display: none;
             position: fixed;
@@ -102,35 +154,97 @@
             z-index: 999;
         }
         a {
-        color: white;
-        text-decoration: none;
+            color: white;
+            text-decoration: none;
         }
         a:hover {
             text-decoration: underline; 
         }
-        
+        /* Navigation Menu */
+        h2 {
+            margin: 0;
+        }
+        .hamburger {
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: #455a6d;
+        }
+        .hamburger-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 10rem;
+            background-color: #f5f5f5;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .hamburger-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .hamburger-menu ul li {
+            padding: 1rem 2rem;
+            text-align: left;
+        }
+        .hamburger-menu ul li a {
+            text-decoration: none;
+            color: #455a6d;
+        }
+        .hamburger-menu ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (max-width: 767px) {
+            header {
+                padding: 6rem 1rem;
+            }
+            .hamburger-menu {
+                right: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Portfolio</h1>
+        <h2>KATHY SANCHEZ</h2>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+        <nav class="hamburger-menu" id="hamburger-menu">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://github.com/kathysanchez/kathysanchez/blob/main/CLICK_HERE_Sanchez_CV.md" target="_blank">CV</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section>
-            <h2>Kathy Sanchez</h2>
-            <p>I am a researcher and data analyst in criminal justice and econ. This site is under construction will showcase some of my work.</p>
-            <p></p>
+            <div class="container">
+                <h1>ABOUT</h1>
+                <p>I'm a researcher and data analyst in criminal justice and econ. My interests include government data infrastructure, transparency, violent crime, weapons, economic mobility and administrative regulations. I'm currently at the Council on Criminal Justice where I manage research contracts and analyze data.</p>
+                <p>This site is under construction and will show some of my work. I made it with help from ChatGPT.</p>
+            </div>
+            <div id="contact-info" class="contact">
+                <h1>CONTACT</h1>
+                <p>ksanchez@counciloncj.org</p>
+            </div>
             <div class="projects">
+                <h1 class="projects-header">PROJECTS</h1>
                 <div class="project" data-project="project1">
-                    <h3>ATF Inspections</h3>
+                    <h3>ATF INSPECTIONS</h3>
                     <p>Inspections of licensed firearm sellers since the Biden White House's "zero tolerance" policy.</p>
                 </div>
                 <div class="project" data-project="project2">
-                    <h3>Another Project</h3>
+                    <h3>ANOTHER PROJECT</h3>
                     <p>Some Analysis</p>
                 </div>
                 <div class="project" data-project="project3">
-                    <h3>And Another Project</h3>
+                    <h3>AND ANOTHER PROJECT</h3>
                     <p>More Analysis</p>
                 </div>
             </div>
@@ -159,7 +273,7 @@
             // Load dynamic content based on the project
             if (projectId === 'project1') {
                 popupContent.innerHTML = `
-                    <img src="https://dummyimage.com/1200X1000/000/fff" alt="Project 1">
+                    <img src="file:///Volumes/Mac_Passport/projects/personal/atf/output/ATF_screenshot1.png" alt="Project 1">
                     <h3>Firearm Seller Inspections</h3>
                     <p>This project uses inspection data from the Bureau of Alcohol, Tobacco, Firearms and Explosives website. Tools used include Python, Pandas, Matplotlib & Seaborn and Quarto. It can hardly be denied that such a demand quite arbitrarily limits the facts which are to be admitted as possible causes of the events which occur in the real world. This view, which is often quite naively accepted as required by scientific procedure, has some rather paradoxical consequences. We know: of course, with regard to the market and similar social structures, a great many facts which we cannot measure and on which indeed we have only some very imprecise and general information. And because the effects of these facts in any particular instance cannot be confirmed by quantitative evidence, they are simply disregarded by those sworn to admit only what they regard as scientific evidence: they thereupon happily proceed on the fiction that the factors which they can measure are the only ones that are relevant.</p>
                 `;
@@ -183,15 +297,32 @@
         });
     });
 
-    // Close popup when clicking the close button or overlay
-    document.querySelector('.popup-close').addEventListener('click', () => {
-        document.querySelector('.popup').style.display = 'none';
-        document.querySelector('.overlay').style.display = 'none';
-    });
-    document.querySelector('.overlay').addEventListener('click', () => {
-        document.querySelector('.popup').style.display = 'none';
-        document.querySelector('.overlay').style.display = 'none';
-    });
+        // Close popup when clicking the close button or overlay
+        document.querySelector('.popup-close').addEventListener('click', () => {
+            document.querySelector('.popup').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        });
+        document.querySelector('.overlay').addEventListener('click', () => {
+            document.querySelector('.popup').style.display = 'none';
+            document.querySelector('.overlay').style.display = 'none';
+        });
+        // Close popup when clicking the close button or overlay
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('hamburger-menu');
+
+        hamburger.addEventListener('click', () => {
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && event.target !== hamburger) {
+                menu.style.display = 'none';
+            }
+        });
     </script>
 </body>
 </html>
