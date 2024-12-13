@@ -12,13 +12,7 @@
             background-color: #ffffff;
             color: #333;
         }
-        header {
-            background-color: #f5f5f5; 
-            color: #455a6d;
-            padding: 6rem 0;
-            text-align: center;
-            position: relative; /* Make the header the parent for positioning */
-        }
+        
         main {
             padding: 2rem;
         }
@@ -30,7 +24,7 @@
         }
         .projects-header {
             color: #455a6d; /* Same color as .container h1 */
-            margin-top: 2rem; /* Space above the header */
+            margin-top: 6rem; /* Space above the header */
             margin-bottom: 0; /* Space below the header */
             margin-left: 6rem; /* Align with .container h1 */
             margin-right: 6rem; /* Align with .container h1 */
@@ -58,7 +52,23 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
-        .container h1 {
+        /* About container */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            align-items: center; /* Vertically align items in the center */
+            gap: 1rem; /* Add spacing between the text and image */
+        }
+        .about-text {
+            flex: 1; /* Take up remaining space */
+            min-width: 300px; /* Ensure the text doesn't shrink too much */
+        }
+        .about-image img {
+            max-width: 300px; /* Limit image width */
+            height: auto; /* Maintain aspect ratio */
+            flex-shrink: 0; /* Prevent the image from shrinking */
+        }
+        .about-container h1 {
             margin-top: 2rem; /* Space above the header */
             margin-bottom: 1rem; /* Slightly more space below the header */
             margin-left: 6rem; /* Add white space to the left */
@@ -66,15 +76,24 @@
             color: #455a6d; /* Header color */
             text-align: left; /* Left-align the text */
         }
-        .container p {
+        .about-container p {
             margin-top: 0; /* Remove unnecessary space above the paragraph */
             margin-bottom: 1rem; /* Reduce space below paragraphs */
             margin-left: 6rem; /* Add white space to the left */
             margin-right: 6rem; /* Add white space to the right */
             text-align: left; /* Left-align the text */
         }
+        @media (max-width: 767px) {
+            .about-container {
+                flex-direction: column; /* Stack items vertically */
+                align-items: flex-start; /* Align items to the left */
+            }
+            .about-image img {
+                margin-top: 1rem; /* Add space above the image */
+            }
+        }
         .contact h1 {
-            margin-top: 2rem; /* Space above the header */
+            margin-top: 6rem; /* Space above the header */
             margin-bottom: 1rem; /* Slightly more space below the header */
             margin-left: 6rem; /* Add white space to the left */
             margin-right: 6rem; /* Add white space to the right */
@@ -160,25 +179,43 @@
         a:hover {
             text-decoration: underline; 
         }
-        /* Navigation Menu */
+
+        /* Header */
+        header {
+            background-color: #f5f5f5; 
+            color: #455a6d;
+            padding: 4rem 10rem; /* Reduced padding to avoid excessive space */
+            text-align: center;
+            position: relative; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         h2 {
             margin: 0;
+            flex: 1; /* Allow h2 to take up space to keep it centered */
+            text-align: center; /* Ensure h2 remains center-aligned */
         }
+
+        /* Navigation Menu */
         .hamburger {
             cursor: pointer;
             background-color: transparent;
             border: none;
-            font-size: 1.5rem;
+            font-size: 3rem; /* Large hamburger icon */
             color: #455a6d;
+            flex-shrink: 0; 
+            margin-top: 4rem; /* Adds space below the header content */
+            position: relative; /* Allows fine-tuned placement */
         }
         .hamburger-menu {
             display: none;
             position: absolute;
-            top: 100%;
-            right: 10rem;
+            top: calc(2.5rem + 2rem); /* Adjust based on the hamburger's size + spacing */
+            right: 1rem;
             background-color: #f5f5f5;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border-radius: 5px;
             overflow: hidden;
         }
         .hamburger-menu ul {
@@ -197,7 +234,6 @@
         .hamburger-menu ul li a:hover {
             text-decoration: underline;
         }
-
         /* Media Queries */
         @media (max-width: 767px) {
             header {
@@ -207,6 +243,7 @@
                 right: 1rem;
             }
         }
+
     </style>
 </head>
 <body>
@@ -224,11 +261,16 @@
     </header>
     <main>
         <section>
-            <div class="container">
-                <h1>ABOUT</h1>
-                <p>I'm a researcher and data analyst in criminal justice and econ. My interests include government data infrastructure, transparency, violent crime, weapons, economic mobility and administrative regulations. I'm currently at the Council on Criminal Justice where I manage research contracts and analyze data.</p>
-                <p>This site is under construction and will show some of my work. I made it with help from ChatGPT.</p>
-            </div>
+            <div class="about-container">
+                <div class="about-text">
+                    <h1>ABOUT</h1>
+                    <p>I'm a researcher and data analyst in criminal justice and econ. My interests include government data infrastructure, transparency, violent crime, weapons, economic mobility, and administrative regulations. I'm currently at the Council on Criminal Justice where I manage research contracts and analyze data.</p>
+                    <p>This site is under construction and will show some of my work. I made it with help from ChatGPT.</p>
+                </div>
+                <div class="about-image">
+                    <img src="file:///Volumes/Mac_Passport/projects/personal/portfolio/pic.jpg" alt="Headshot" />
+                </div>
+            </div>            
             <div id="contact-info" class="contact">
                 <h1>CONTACT</h1>
                 <p>ksanchez@counciloncj.org</p>
@@ -296,7 +338,6 @@
             document.querySelector('.overlay').style.display = 'block';
         });
     });
-
         // Close popup when clicking the close button or overlay
         document.querySelector('.popup-close').addEventListener('click', () => {
             document.querySelector('.popup').style.display = 'none';
@@ -309,15 +350,14 @@
         // Close popup when clicking the close button or overlay
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('hamburger-menu');
-
+        
+        // Hamburger
         hamburger.addEventListener('click', () => {
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
+            const rect = hamburger.getBoundingClientRect(); // Get the hamburger's position
+            menu.style.top = `${rect.bottom + window.scrollY + 10}px`; // Place menu 10px below
+            menu.style.left = `${rect.left}px`; // Align menu to the left of the hamburger
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         });
-
         document.addEventListener('click', (event) => {
             if (!menu.contains(event.target) && event.target !== hamburger) {
                 menu.style.display = 'none';
