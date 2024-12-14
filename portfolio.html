@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Kathy Sanchez</title>
     <style>
         body {
             font-family: "Trebuchet MS", Verdana, Tahoma, Geneva, sans-serif;
@@ -12,77 +12,143 @@
             background-color: #ffffff;
             color: #333;
         }
-        
+        /* Header */
+        header {
+            background-color: #f5f5f5; 
+            color: #455a6d;
+            padding: 4rem 10rem; /* Reduced padding to avoid excessive space */
+            text-align: center;
+            position: relative; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h2 {
+            margin: 0;
+            flex: 1; /* Allow h2 to take up space to keep it centered */
+            text-align: center; /* Ensure h2 remains center-aligned */
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            position: relative;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            font-size: 3rem; /* Large hamburger */
+            color: #455a6d;
+            flex-shrink: 0; 
+            margin-top: 4rem; /* Adds space below the header content */
+            position: relative; /* Allows fine-tuned placement */
+            top: 2rem;
+            right: 18rem;
+        }
+        .hamburger-menu {
+            display: none;
+            position: absolute;
+            top: calc(2.5rem + 2rem); /* Adjust based on the hamburger's size + spacing */
+            right: 8rem;
+            background-color: #f5f5f5;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 200px; /* Default width for desktop */
+            max-width: 80%; /* Limit width on smaller screens */
+        }
+        .hamburger-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .hamburger-menu ul li {
+            padding: 1rem 2rem;
+            text-align: left;
+        }
+        .hamburger-menu ul li a {
+            text-decoration: none;
+            color: #455a6d;
+        }
+        .hamburger-menu ul li a:hover {
+            text-decoration: underline;
+        }
+                    /* Responsive styles for laptop */
+        @media (min-width: 1023px) and (max-width: 1920) {
+            .hamburger {
+                font-size: 2.5rem; /* Slightly smaller icon for tablets */
+                margin: 0.5rem;
+                top: 2rem;
+            }
+        }
+                    /* Responsive styles for tablet */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .hamburger {
+                font-size: 2.5rem; /* Slightly smaller icon for tablets */
+                margin: 0.5rem;
+            }
+            .hamburger-menu {
+                right: 0; /* Align to the right edge */
+                width: 80%; /* Smaller menu for tablets */
+                max-width: 70%;
+            }
+        }
+                    /* Responsive styles for mobile */
+        @media (max-width: 767px) {
+            header {
+                padding: 6rem 1rem;
+            }
+            .hamburger {
+                font-size: 2rem; /* Smaller icon for mobile */
+                margin-left: 2rem;
+                text-align: left;
+                max-width: 60%;
+            }
+            .hamburger-menu {
+                right: 0;
+                width: 100%; /* Full-width for mobile */
+                text-align: left; /* Align menu items to the left */
+                max-width: 60%;
+            }
+            .hamburger-menu ul li {
+                padding: 1rem 1.5rem; /* Adjust padding for touch screens */
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
         main {
             padding: 2rem;
         }
-        .projects {
-            display: flex; /* Use flexbox for alignment */
-            flex-direction: column; /* Stack items vertically */
-            align-items: stretch; /* Allow items to stretch to the container width */
-            gap: 1rem; /* Add space between the header and cards */
-        }
-        .projects-header {
-            color: #455a6d; /* Same color as .container h1 */
-            margin-top: 6rem; /* Space above the header */
-            margin-bottom: 0; /* Space below the header */
-            margin-left: 6rem; /* Align with .container h1 */
-            margin-right: 6rem; /* Align with .container h1 */
-            text-align: left; /* Force left alignment */
-        }
-        .project {
-            width: 600px;
-            background-color: #fff;
-            color: #333;
-            padding: 3rem;
-            margin: 0 auto; /* Center project cards horizontally */
-            text-align: center;
-            cursor: pointer;
-        }
-        .project:hover {
-            background-color: #f5f5f5;
-        }
-        .project h3 {
-            color: #455a6d;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
+        
         /* About container */
         .about-container {
             display: flex;
             flex-wrap: wrap; /* Allow items to wrap on smaller screens */
             align-items: center; /* Vertically align items in the center */
-            gap: 1rem; /* Add spacing between the text and image */
+            gap: 6rem; /* Add spacing between the text and image */
         }
         .about-text {
             flex: 1; /* Take up remaining space */
             min-width: 300px; /* Ensure the text doesn't shrink too much */
         }
         .about-image img {
+            margin-top: 0rem; /* Space above the header */
+            margin-bottom: 1rem; /* Slightly more space below the header */
             max-width: 300px; /* Limit image width */
             height: auto; /* Maintain aspect ratio */
             flex-shrink: 0; /* Prevent the image from shrinking */
         }
         .about-container h1 {
-            margin-top: 2rem; /* Space above the header */
+            margin-top: 1rem; /* Space above the header */
             margin-bottom: 1rem; /* Slightly more space below the header */
-            margin-left: 6rem; /* Add white space to the left */
-            margin-right: 6rem; /* Add white space to the right */
             color: #455a6d; /* Header color */
             text-align: left; /* Left-align the text */
         }
         .about-container p {
             margin-top: 0; /* Remove unnecessary space above the paragraph */
             margin-bottom: 1rem; /* Reduce space below paragraphs */
-            margin-left: 6rem; /* Add white space to the left */
-            margin-right: 6rem; /* Add white space to the right */
             text-align: left; /* Left-align the text */
         }
+
         @media (max-width: 767px) {
             .about-container {
                 flex-direction: column; /* Stack items vertically */
@@ -92,43 +158,63 @@
                 margin-top: 1rem; /* Add space above the image */
             }
         }
+        
+        /* Contact */
         .contact h1 {
             margin-top: 6rem; /* Space above the header */
             margin-bottom: 1rem; /* Slightly more space below the header */
-            margin-left: 6rem; /* Add white space to the left */
-            margin-right: 6rem; /* Add white space to the right */
             color: #455a6d; /* Header color */
             text-align: left; /* Left-align the text */
         }
         .contact p {
             margin-top: 0; /* Remove unnecessary space above the paragraph */
             margin-bottom: 1rem; /* Reduce space below paragraphs */
-            margin-left: 6rem; /* Add white space to the left */
-            margin-right: 6rem; /* Add white space to the right */
             text-align: left; /* Left-align the text */
         }
-        /* Desktop-specific adjustments */
-        @media (min-width: 1024px) {
-            .container h1, .container p, .projects-header, .contact h1, .contact p {
-                margin-left: 10rem; /* Wider white space for larger screens */
-                margin-right: 10rem;
+        
+                        /* Desktop-specific adjustments */
+        @media (min-width: 1921px) {
+            .about-container, .projects-header, .contact h1, .contact p {
+                margin-left: 30rem; /* Wider white space for larger screens */
+                margin-right: 30rem;
+                display: flex;
+                flex-direction: row; /* Maintain row layout for large screens */
+                justify-content: space-between;
+            }
+            .about-container {
+                margin-top: 6rem; /* Space above the container */
             }
         }
-        /* Tablet-specific adjustments */
+                        /* Laptop-specific adjustments */
+        @media (min-width: 1024px) and (max-width: 1920px) {
+            .about-container, .projects-header, .contact h1, .contact p  {
+                display: flex;
+                margin-left: 18rem; /* Wider white space for larger screens */
+                margin-right: 18rem;
+                flex-direction: row; /* Maintain row layout on medium screens */
+                justify-content: space-between; /* Space out the items */
+            }
+            .about-container {
+                margin-top: 4rem; /* Space above the container */
+            }
+        }
+                        /* Tablet-specific adjustments */
         @media (min-width: 768px) and (max-width: 1023px) {
-            .container h1, .container p, .projects-header, .contact h1, .contact p {
+            .about-container, .projects-header, .contact h1, .contact p {
                 margin-left: 4rem; /* Moderate white space for tablets */
                 margin-right: 4rem;
             }
         }
-        /* Mobile-specific adjustments */
+                        /* Mobile-specific adjustments */
         @media (max-width: 767px) {
-            .container h1, .container p, .projects-header, .contact h1, .contact p {
+            .about-container, .projects-header, .contact h1, .contact p {
                 margin-left: 1rem; /* Narrower margins for small screens */
                 margin-right: 1rem;
                 margin-bottom: 1rem; /* Keep space between elements proportional */
             }
         }       
+        
+        /* Popups */
         .popup {
             display: none;
             position: fixed;
@@ -179,71 +265,54 @@
         a:hover {
             text-decoration: underline; 
         }
-
-        /* Header */
-        header {
-            background-color: #f5f5f5; 
-            color: #455a6d;
-            padding: 4rem 10rem; /* Reduced padding to avoid excessive space */
+        
+        /* Project cards */
+        .projects-header {
+            color: #455a6d; /* Same color as .container h1 */
+            margin-top: 6rem; /* Space above the header */
+            margin-bottom: 0; /* Space below the header */
+            text-align: left; /* Force left alignment */
+        }
+        
+        .projects {
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack items vertically */
+            align-items: stretch; /* Allow items to stretch to the container width */
+            gap: 1rem; /* Add space between the header and cards */
+        }
+        .project {
+            width: 300px;
+            background-color: #fff;
+            color: #333;
+            padding-top: 4rem; /* Space above the header */
+            padding-bottom: 4rem; /* Space below the header */
+            padding-left: 4rem; /* Space above the header */
+            padding-right: 4rem; /* Space below the header */
+            margin: 0 auto; /* Center project cards horizontally */
             text-align: center;
-            position: relative; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        h2 {
-            margin: 0;
-            flex: 1; /* Allow h2 to take up space to keep it centered */
-            text-align: center; /* Ensure h2 remains center-aligned */
-        }
-
-        /* Navigation Menu */
-        .hamburger {
             cursor: pointer;
-            background-color: transparent;
-            border: none;
-            font-size: 3rem; /* Large hamburger icon */
-            color: #455a6d;
-            flex-shrink: 0; 
-            margin-top: 4rem; /* Adds space below the header content */
-            position: relative; /* Allows fine-tuned placement */
         }
-        .hamburger-menu {
-            display: none;
-            position: absolute;
-            top: calc(2.5rem + 2rem); /* Adjust based on the hamburger's size + spacing */
-            right: 1rem;
+        .project:hover {
             background-color: #f5f5f5;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
         }
-        .hamburger-menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .hamburger-menu ul li {
-            padding: 1rem 2rem;
-            text-align: left;
-        }
-        .hamburger-menu ul li a {
-            text-decoration: none;
+        .project h3 {
             color: #455a6d;
         }
-        .hamburger-menu ul li a:hover {
-            text-decoration: underline;
-        }
-        /* Media Queries */
-        @media (max-width: 767px) {
-            header {
-                padding: 6rem 1rem;
-            }
-            .hamburger-menu {
-                right: 1rem;
-            }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
 
+        @media (max-width: 767px) {
+            .project {
+                flex: 1 1 100%; /* Full width for mobile */
+                margin: 1rem 0; /* Space between cards */
+                width: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -252,9 +321,8 @@
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
         <nav class="hamburger-menu" id="hamburger-menu">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="https://github.com/kathysanchez/kathysanchez/blob/main/CLICK_HERE_Sanchez_CV.md" target="_blank">CV</a></li>
             </ul>
         </nav>
@@ -264,22 +332,23 @@
             <div class="about-container">
                 <div class="about-text">
                     <h1>ABOUT</h1>
-                    <p>I'm a researcher and data analyst in criminal justice and econ. My interests include government data infrastructure, transparency, violent crime, weapons, economic mobility, and administrative regulations. I'm currently at the Council on Criminal Justice where I manage research contracts and analyze data.</p>
-                    <p>This site is under construction and will show some of my work. I made it with help from ChatGPT.</p>
+                    <p>I'm a researcher and data analyst in criminal justice and econ. My interests include government data infrastructure, transparency, violent crime, weapons, economic mobility, occupational regulation and administrative regulation. Much of my research has focused on seizures and forfeitures, and my work has been cited by Justice Gorsuch, ProPublica and other outlets.</p>
+                    <p>Currently, I'm at the Council on Criminal Justice where I manage research contracts, analyze data and write reports. Before the Council, I worked at Maryland's sentencing commission and the Institute for Justice.</p>
+                    <p>I live in Baltimore, MD. Things I love include working out at my home gym, heavy metal, making yummy, nutritious food, playing with my pit bull mix and various hobby projects like making this website with ChatGPT.</p>
                 </div>
                 <div class="about-image">
                     <img src="file:///Volumes/Mac_Passport/projects/personal/portfolio/pic.jpg" alt="Headshot" />
                 </div>
             </div>            
-            <div id="contact-info" class="contact">
+            <div id="contact" class="contact">
                 <h1>CONTACT</h1>
-                <p>ksanchez@counciloncj.org</p>
+                <p>Direct message me on socials. Or at ksanchez@counciloncj.org.</p>
             </div>
-            <div class="projects">
+            <div id="projects" class="projects">
                 <h1 class="projects-header">PROJECTS</h1>
                 <div class="project" data-project="project1">
                     <h3>ATF INSPECTIONS</h3>
-                    <p>Inspections of licensed firearm sellers since the Biden White House's "zero tolerance" policy.</p>
+                    <p>Inspections of licensed firearm sellers since the Biden White House began its "zero tolerance" policy.</p>
                 </div>
                 <div class="project" data-project="project2">
                     <h3>ANOTHER PROJECT</h3>
@@ -300,7 +369,7 @@
         </section>
     </main>
     <footer>
-        <p><a href="https://www.linkedin.com/in/kathy-sanchez-/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://github.com/kathysanchez" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://github.com/kathysanchez/kathysanchez/blob/main/CLICK_HERE_Sanchez_CV.md" target="_blank" rel="noopener noreferrer">CV</a></p>
+        <p><a href="https://www.linkedin.com/in/kathy-sanchez-/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://github.com/kathysanchez" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://x.com/gkathysanchez" target="_blank" rel="noopener noreferrer">Twitter</a> | <a href="https://scholar.google.com/citations?hl=en&user=egRZh9wAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
     </footer>
 
     <!-- Overlay for Popups -->
