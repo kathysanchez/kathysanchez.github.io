@@ -12,11 +12,15 @@
             background-color: #ffffff;
             color: #333;
         }
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Header */
         header {
             background-color: #f5f5f5; 
-            color: #455a6d;
-            padding: 4rem 10rem; /* Reduced padding to avoid excessive space */
+            color: #455a6d; /* Slate */
+            padding: 6rem 6rem; 
             text-align: center;
             position: relative; 
             display: flex;
@@ -53,6 +57,7 @@
             overflow: hidden;
             width: 200px; /* Default width for desktop */
             max-width: 80%; /* Limit width on smaller screens */
+            transform: translateX(5%); /* Shift the menu to the right of the icon */
         }
         .hamburger-menu ul {
             list-style: none;
@@ -70,12 +75,13 @@
         .hamburger-menu ul li a:hover {
             text-decoration: underline;
         }
-                    /* Responsive styles for laptop */
-        @media (min-width: 1023px) and (max-width: 1920) {
-            .hamburger {
-                font-size: 2.5rem; /* Slightly smaller icon for tablets */
-                margin: 0.5rem;
-                top: 2rem;
+                    /* Responsive styles for Macbook Pro */
+        @media (min-width: 1512px) and (max-width: 1964px) and (-webkit-min-device-pixel-ratio: 2) {            
+        .hamburger {
+            font-size: 2.5rem; 
+            margin: 0.5rem;
+            top: 2rem;
+            align-items: right;
             }
         }
                     /* Responsive styles for tablet */
@@ -86,8 +92,8 @@
             }
             .hamburger-menu {
                 right: 0; /* Align to the right edge */
-                width: 80%; /* Smaller menu for tablets */
-                max-width: 70%;
+                width: 100%; /* Smaller menu for tablets */
+                max-width: 100%;
             }
         }
                     /* Responsive styles for mobile */
@@ -97,28 +103,22 @@
             }
             .hamburger {
                 font-size: 2rem; /* Smaller icon for mobile */
-                margin-left: 2rem;
+                align-items: left;
                 text-align: left;
-                max-width: 60%;
+                max-width: 25%;
+                right: 1rem;
             }
             .hamburger-menu {
                 right: 0;
-                width: 100%; /* Full-width for mobile */
+                align-items: left;
                 text-align: left; /* Align menu items to the left */
-                max-width: 60%;
+                max-width: 35%;
+                transform: translateX(-70%); /* Shift the menu to the left of the icon */
             }
             .hamburger-menu ul li {
                 padding: 1rem 1.5rem; /* Adjust padding for touch screens */
             }
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-        main {
-            padding: 2rem;
-        }
-        
         /* About container */
         .about-container {
             display: flex;
@@ -149,15 +149,7 @@
             text-align: left; /* Left-align the text */
         }
 
-        @media (max-width: 767px) {
-            .about-container {
-                flex-direction: column; /* Stack items vertically */
-                align-items: flex-start; /* Align items to the left */
-            }
-            .about-image img {
-                margin-top: 1rem; /* Add space above the image */
-            }
-        }
+
         
         /* Contact */
         .contact h1 {
@@ -173,8 +165,8 @@
         }
         
                         /* Desktop-specific adjustments */
-        @media (min-width: 1921px) {
-            .about-container, .projects-header, .contact h1, .contact p {
+        @media (min-width: 1024px) and (max-width: 2700px) {
+            .about-container, .projects-header, .projects-p, .contact h1, .contact p {
                 margin-left: 30rem; /* Wider white space for larger screens */
                 margin-right: 30rem;
                 display: flex;
@@ -185,35 +177,46 @@
                 margin-top: 6rem; /* Space above the container */
             }
         }
-                        /* Laptop-specific adjustments */
-        @media (min-width: 1024px) and (max-width: 1920px) {
-            .about-container, .projects-header, .contact h1, .contact p  {
-                display: flex;
-                margin-left: 18rem; /* Wider white space for larger screens */
-                margin-right: 18rem;
-                flex-direction: row; /* Maintain row layout on medium screens */
-                justify-content: space-between; /* Space out the items */
+                        /* Macbook Pro specific adjustments for retina display*/
+        @media screen 
+            and (min-device-width: 1200px) 
+            and (max-device-width: 1600px) 
+            and (-webkit-min-device-pixel-ratio: 2)
+            and (min-resolution: 192dpi) { 
+                .about-container, .projects-header, .projects-p, .contact h1, .contact p  {
+                    display: flex;
+                    margin-left: 18rem; /* Wider white space for larger screens */
+                    margin-right: 18rem;
+                    flex-direction: row; /* Maintain row layout on medium screens */
+                    justify-content: space-between; /* Space out the items */
             }
             .about-container {
-                margin-top: 4rem; /* Space above the container */
+                margin-top: 6rem; /* Space above the container */
             }
         }
-                        /* Tablet-specific adjustments */
+        /* Tablet-specific adjustments */
         @media (min-width: 768px) and (max-width: 1023px) {
-            .about-container, .projects-header, .contact h1, .contact p {
+            .about-container, .projects-header, .projects-p, .contact h1, .contact p {
                 margin-left: 4rem; /* Moderate white space for tablets */
                 margin-right: 4rem;
             }
         }
                         /* Mobile-specific adjustments */
         @media (max-width: 767px) {
-            .about-container, .projects-header, .contact h1, .contact p {
+            .about-container, .projects-header, .projects-p, .contact h1, .contact p {
                 margin-left: 1rem; /* Narrower margins for small screens */
                 margin-right: 1rem;
                 margin-bottom: 1rem; /* Keep space between elements proportional */
             }
-        }       
-        
+            .about-container {
+                flex-direction: column; /* Stack items vertically */
+                gap: 1rem; /* Add spacing between the text and image */
+            }
+            .about-image img {
+                margin-top: 1rem; /* Add space above the image */
+            }
+
+        }
         /* Popups */
         .popup {
             display: none;
@@ -258,6 +261,16 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+        /* Specific styles for hyperlinks in the Projects section */
+        .popup a {
+            color: #62829e; /* Choose your preferred color (e.g., Dodger Blue) */
+            text-decoration: none; /* Removes underline by default */
+        }
+
+        .popup a:hover {
+            color: #455a6d; /* Choose a hover color */
+            text-decoration: underline; /* Add underline on hover */
+        }
         a {
             color: white;
             text-decoration: none;
@@ -265,7 +278,6 @@
         a:hover {
             text-decoration: underline; 
         }
-        
         /* Project cards */
         .projects-header {
             color: #455a6d; /* Same color as .container h1 */
@@ -273,12 +285,16 @@
             margin-bottom: 0; /* Space below the header */
             text-align: left; /* Force left alignment */
         }
-        
+        .projects-p {
+            margin-bottom: 0; /* Space below the header */
+            margin-top: 0; 
+            text-align: left; /* Force left alignment */
+        }
         .projects {
             display: flex; /* Use flexbox for alignment */
             flex-direction: column; /* Stack items vertically */
             align-items: stretch; /* Allow items to stretch to the container width */
-            gap: 1rem; /* Add space between the header and cards */
+
         }
         .project {
             width: 300px;
@@ -305,12 +321,11 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
-
         @media (max-width: 767px) {
             .project {
-                flex: 1 1 100%; /* Full width for mobile */
-                margin: 1rem 0; /* Space between cards */
-                width: 200px;
+                margin: 1rem; /* Space between cards */
+                align-items: center; 
+                text-align: center;
             }
         }
     </style>
@@ -333,8 +348,8 @@
                 <div class="about-text">
                     <h1>ABOUT</h1>
                     <p>I'm a researcher and data analyst in criminal justice and econ. My interests include government data infrastructure, transparency, violent crime, weapons, economic mobility, occupational regulation and administrative regulation. Much of my research has focused on seizures and forfeitures, and my work has been cited by Justice Gorsuch, ProPublica and other outlets.</p>
-                    <p>Currently, I'm at the Council on Criminal Justice where I manage research contracts, analyze data and write reports. Before the Council, I worked at Maryland's sentencing commission and the Institute for Justice.</p>
-                    <p>I live in Baltimore, MD. Things I love include working out at my home gym, heavy metal, making yummy, nutritious food, playing with my pit bull mix and various hobby projects like making this website with ChatGPT.</p>
+                    <p>Currently, I'm at the Council on Criminal Justice where I manage research contracts, analyze data and write reports. Before the Council, I worked for Maryland's sentencing commission and at the Institute for Justice.</p>
+                    <p>I live in Baltimore, MD. Things I love include playing with my pit bull mix, fitness, heavy metal, a great bargain like hosting this website on GitHub for "free" and various hobby projects like making this site with ChatGPT.</p>
                 </div>
                 <div class="about-image">
                     <img src="file:///Volumes/Mac_Passport/projects/personal/portfolio/pic.jpg" alt="Headshot" />
@@ -346,20 +361,18 @@
             </div>
             <div id="projects" class="projects">
                 <h1 class="projects-header">PROJECTS</h1>
+                <div class="projects-p">
+                    <p>Preview some of my work.</p>
+                </div>
                 <div class="project" data-project="project1">
-                    <h3>ATF INSPECTIONS</h3>
-                    <p>Inspections of licensed firearm sellers since the Biden White House began its "zero tolerance" policy.</p>
+                    <h3>Firearm Seller Inspections</h3>
+                    <p>Inspections of licensed firearm sellers since the Biden White House started its "zero tolerance" policy.</p>
                 </div>
                 <div class="project" data-project="project2">
-                    <h3>ANOTHER PROJECT</h3>
-                    <p>Some Analysis</p>
+                    <h3>Women's Justice: By the Numbers</h3>
+                    <p>A series of charts for the Council on Criminal Justice and its Women's Justice Commission.</p>
                 </div>
-                <div class="project" data-project="project3">
-                    <h3>AND ANOTHER PROJECT</h3>
-                    <p>More Analysis</p>
-                </div>
-            </div>
-            
+            </div>      
             <div class="popup" id="popup1">
                 <button class="popup-close">&times;</button>
                 <div id="popup-content">
@@ -384,21 +397,21 @@
             // Load dynamic content based on the project
             if (projectId === 'project1') {
                 popupContent.innerHTML = `
-                    <img src="file:///Volumes/Mac_Passport/projects/personal/atf/output/ATF_screenshot1.png" alt="Project 1">
+                    <img src="file:///Volumes/Mac_Passport/projects/personal/portfolio/ATF_screenshot1.png" alt="Graph">
                     <h3>Firearm Seller Inspections</h3>
-                    <p>This project uses inspection data from the Bureau of Alcohol, Tobacco, Firearms and Explosives website. Tools used include Python, Pandas, Matplotlib & Seaborn and Quarto. It can hardly be denied that such a demand quite arbitrarily limits the facts which are to be admitted as possible causes of the events which occur in the real world. This view, which is often quite naively accepted as required by scientific procedure, has some rather paradoxical consequences. We know: of course, with regard to the market and similar social structures, a great many facts which we cannot measure and on which indeed we have only some very imprecise and general information. And because the effects of these facts in any particular instance cannot be confirmed by quantitative evidence, they are simply disregarded by those sworn to admit only what they regard as scientific evidence: they thereupon happily proceed on the fiction that the factors which they can measure are the only ones that are relevant.</p>
+                    <p>This is a wrangling, exploratory analysis and visualization project that examines inspection data. The Bureau of Alcohol, Tobacco, Firearms and Explosives significantly ramped up its inspections of licensed firearm sellers after the White House announced its "zero tolerance" policy in 2021.</p>
+                    <p>Outputs: A <a href="https://github.com/kathysanchez/atf/blob/main/ATF_Inspection_Figures.pdf" target="_blank" rel="noopener noreferrer">PDF report</a> of figures and a descriptive stats Excel file.</p>
+                    <p>Tools: Python, Pandas, Matplotlib & Seaborn and Quarto.</p>
+                    <p>Last Updated: December 2024.</p>
                 `;
             } else if (projectId === 'project2') {
                 popupContent.innerHTML = `
-                    <img src="https://via.placeholder.com/400" alt="Project 2">
-                    <h3>Another Projectn</h3>
-                    <p>This project analyzes something to determine effect. Tools used include Python, NLTK, and Matplotlib.</p>
-                `;
-            } else if (projectId === 'project3') {
-                popupContent.innerHTML = `
-                    <img src="https://via.placeholder.com/400" alt="Project 3">
-                    <h3>Yet Another Project</h3>
-                    <p>An interactive dashboard visualizing something. Tools used include Python, Plotly, and Dash.</p>
+                    <img src="file:///Volumes/Mac_Passport/projects/personal/portfolio/WBTN-2024.png" alt="Project 2">
+                    <h3>Women's Justice: By the Numbers</h3>
+                    <p>A series of charts for the Council on Criminal Justice to inform the Women's Justice Commission, a CCJ project launched in July 2024.</p>
+                    <p>Outputs: A Council <a href="https://counciloncj.org/womens-justice-by-the-numbers/" target="_blank" rel="noopener noreferrer">report.</a></p>
+                    <p>Tools: Infogram.</p>
+                    <p>Completed: July 2024.</p>                
                 `;
             }
 
