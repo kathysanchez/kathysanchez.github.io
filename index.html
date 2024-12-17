@@ -8,7 +8,8 @@
     <meta name="keywords" content="researcher, council, criminal justice, institute, data">
     <meta name="google-site-verification" content="ycStzZH_FWVMNtTDyvPuFrNF_5nq-yQKrKv-FVtVZK8" />
     <title>Kathy Sanchez | Researcher</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Person by Kiki Rizky from https://thenounproject.com/browse/icons/term/person/ Noun Project, CC BY 3.0 -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
     <style>
         body {
             font-family: "Trebuchet MS", Verdana, Tahoma, Geneva, sans-serif;
@@ -297,7 +298,6 @@
             display: flex; /* Use flexbox for alignment */
             flex-direction: column; /* Stack items vertically */
             align-items: inherit; /* Allow items to stretch to the container width */
-
         }
         .project {
             width: 300px;
@@ -405,7 +405,7 @@
             // Load dynamic content based on the project
             if (projectId === 'project1') {
                 popupContent.innerHTML = `
-                    <img src="ATF_screenshot1.png" alt="Graph">
+                    <a href="https://github.com/kathysanchez/atf/tree/main/ATF_Inspection_Figures.pdf" title="Go to the main report on GitHub"><img src="ATF_screenshot1.png" alt="Graph"></a>
                     <h3>Firearm Seller Inspections</h3>
                     <p>This is a wrangling, exploratory analysis and visualization project that examines inspection data. The Bureau of Alcohol, Tobacco, Firearms and Explosives significantly ramped up its inspections of licensed firearm sellers after the White House announced its "zero tolerance" policy in 2021.</p>
                     <p>Outputs: A <a href="https://github.com/kathysanchez/atf/blob/main/ATF_Inspection_Figures.pdf" target="_blank" rel="noopener noreferrer">PDF report</a> of figures and a descriptive stats Excel file.</p>
@@ -414,7 +414,7 @@
                 `;
             } else if (projectId === 'project2') {
                 popupContent.innerHTML = `
-                    <img src="WBTN-2024.png" alt="Project 2">
+                    <a href="https://counciloncj.org/womens-justice-by-the-numbers/" title="Go to the main report"> <img src="WBTN-2024.png" alt="Image from CCJ report"></a>
                     <h3>Women's Justice: By the Numbers</h3>
                     <p>A series of charts for the Council on Criminal Justice to inform the Women's Justice Commission, a Council project launched in July 2024.</p>
                     <p>Outputs: A Council <a href="https://counciloncj.org/womens-justice-by-the-numbers/" target="_blank" rel="noopener noreferrer">report.</a></p>
