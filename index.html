@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Kathy Sanchez is a researcher and data analyst in criminal justice. She is a research specialist at the Council on Criminal Justice and was previously at the Institute for Justice.">
+    <meta name="description" content="I'm a researcher and data analyst in criminal justice, and I work at the Council on Criminal Justice. This is my personal site.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kathy Sanchez">
     <meta name="keywords" content="researcher, council, criminal justice, institute, data">
@@ -29,7 +29,7 @@
             padding-top: 8rem; 
             border: none;
             position: relative; 
-            padding-bottom: 5rem; 
+            padding-bottom: 2rem; 
             align-items: center;
         }
         h2 {
@@ -56,16 +56,17 @@
             border: none;
             font-size: 3rem; /* Large hamburger */
             color: #455a6d;
+            padding-bottom: 3rem;
         }
         .hamburger-menu {
             display: none;
             position: absolute;
-            top: 100%; 
+            top: 55%; 
             right: 29.5rem;
             z-index: 10; /* Ensure it appears above other elements */
             background-color: #f5f5f5;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 200px; /* Default width for desktop */
+            width: 165px; /* Default width for desktop */
             max-width: 80%; /* Limit width on smaller screens */
             transform: translateX(-5%);  /* Shift the menu to the right of the icon */
         }
@@ -112,22 +113,27 @@
         }
                     /* Responsive styles for mobile */
         @media (max-width: 767px) {
-            header {
-                padding: 6rem 1rem;
+            .header-main {
+                padding-top: 2rem;
+                padding-bottom: 0rem;
+                padding-right: 1rem;
+            }
+            .header-hamburger {
+                padding-right: 1rem;      
             }
             .hamburger {
                 font-size: 2rem; /* Smaller icon for mobile */
-                align-items: left;
-                text-align: left;
                 max-width: 25%;
-                right: 1rem;
+                padding: 0.5rem;
             }
             .hamburger-menu {
-                right: 0;
+                position: absolute;
+                top: 100%;
+                right: 0.5rem;
                 align-items: left;
                 text-align: left; /* Align menu items to the left */
                 max-width: 35%;
-                transform: translateX(-70%); /* Shift the menu to the left of the icon */
+                transform: none; /* Shift the menu to the left of the icon */
             }
             .hamburger-menu ul li {
                 padding: 1rem 1.5rem; /* Adjust padding for touch screens */
@@ -222,6 +228,7 @@
             .about-container {
                 flex-direction: column; /* Stack items vertically */
                 gap: 1rem; /* Add spacing between the text and image */
+                margin-top: 1rem;
             }
             .about-image img {
                 margin-top: 1rem; /* Add space above the image */
@@ -364,9 +371,9 @@
             <div class="about-container">
                 <div class="about-text">
                     <h1>ABOUT</h1>
-                    <p>I'm a researcher and data analyst in criminal justice and econ. I work at the Council on Criminal Justice where I manage research contracts and support its commissions by analyzing and presenting data. Before the Council, I worked for Maryland's sentencing commission and at the Institute for Justice.</p>
-                    <p>My interests include government data systems, transparency, weapons, economic mobility, occupational regulation and administrative regulation. Much of my research has focused on seizures and forfeitures, and my work has been cited by Justice Gorsuch, ProPublica and other outlets.</p>
-                    <p>I live in Baltimore, MD. Things I love include playing with my pit bull mix, fitness, heavy metal, a great bargain like hosting this website on GitHub for "free" and various hobby projects like making this site with ChatGPT.</p>
+                    <p>I'm a researcher and data analyst in criminal justice and economics. My interests include government data systems, transparency, weapons, economic mobility, occupational regulation and administrative regulation. Much of my research has focused on seizures and forfeitures, and my work has been cited by Justice Gorsuch, ProPublica and other outlets.</p>
+                    <p>I work at the Council on Criminal Justice where I manage research contracts and support its commissions by analyzing and presenting data. Before the Council, I worked for Maryland's sentencing commission and at the Institute for Justice.</p>
+                    <p>I live in Baltimore, MD. I love playing with my pit bull mix, fitness, heavy metal, a great bargain like hosting this website on GitHub for "free" and various hobby projects like making this site with ChatGPT.</p>
                 </div>
                 <div class="about-image">
                     <img src="pic.jpg" alt="Headshot" />
