@@ -40,14 +40,15 @@
         }
         /* Hamburger header & Menu */
         .header-hamburger {
-            display: flex;
             position: relative; 
+            display: flex;
             justify-content: flex-end; /* Align hamburger to the right */
             background-color: #f5f5f5;
             color: #455a6d;
             cursor: pointer;
             border: none;
-            padding-right: 30rem;
+            padding-right: 29.4rem;
+            padding-bottom: 0;
         }
         .hamburger {
             cursor: pointer;
@@ -59,15 +60,14 @@
         .hamburger-menu {
             display: none;
             position: absolute;
-            top: 0; /* Align menu with the top of the hamburger button */
-            left: 100%; /* Position the menu to the right of the hamburger */
+            top: 100%; 
+            right: 29.5rem;
             z-index: 10; /* Ensure it appears above other elements */
             background-color: #f5f5f5;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
             width: 200px; /* Default width for desktop */
             max-width: 80%; /* Limit width on smaller screens */
-            /*transform: translateX(5%);  Shift the menu to the right of the icon */
+            transform: translateX(-5%);  /* Shift the menu to the right of the icon */
         }
         .hamburger-menu ul {
             list-style: none;
@@ -75,7 +75,7 @@
             padding: 0;
         }
         .hamburger-menu ul li {
-            padding: 1rem 2rem;
+            padding: 1rem 1rem;
             text-align: left;
         }
         .hamburger-menu ul li a {
@@ -93,6 +93,9 @@
             and (min-resolution: 192dpi) {
                     .header-hamburger {
                     padding: 0 18rem 0 0; 
+                    }
+                    .hamburger-menu {
+                        right: 18rem; /* Match the header padding */
                     }
                 }
                     /* Responsive styles for tablet */
@@ -172,7 +175,6 @@
             margin-bottom: 1rem; /* Reduce space below paragraphs */
             text-align: left; /* Left-align the text */
         }
-        
                         /* Desktop-specific adjustments */
         @media (min-width: 1024px) and (max-width: 2700px) {
             .about-container, .projects-header, .projects-p, .contact h1, .contact p {
@@ -346,7 +348,7 @@
 <body>
     <header class="header-main">
         <h2>KATHY SANCHEZ</h2>
-    </header>
+    </header>    
     <header class="header-hamburger">   
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
         <nav class="hamburger-menu" id="hamburger-menu">
@@ -444,21 +446,19 @@
             document.querySelector('.popup').style.display = 'none';
             document.querySelector('.overlay').style.display = 'none';
         });
-        // Close popup when clicking the close button or overlay
+
+        // Hamburger
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('hamburger-menu');
-        
-        // Hamburger
+
         hamburger.addEventListener('click', () => {
-            const rect = hamburger.getBoundingClientRect(); // Get the hamburger's position
-            menu.style.top = `${rect.bottom + window.scrollY + 10}px`; // Place menu 10px below
-            menu.style.left = `${rect.left}px`; // Align menu to the left of the hamburger
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         });
+
         document.addEventListener('click', (event) => {
-            if (!menu.contains(event.target) && event.target !== hamburger) {
-                menu.style.display = 'none';
-            }
+        if (!menu.contains(event.target) && event.target !== hamburger) {
+            menu.style.display = 'none';
+        }
         });
     </script>
 </body>
