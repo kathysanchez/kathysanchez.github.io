@@ -1,0 +1,5 @@
+# Ignore archived files
+/archive/
+
+# Ignore OS-specific files
+.DS_Store
