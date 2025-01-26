@@ -168,7 +168,15 @@
             margin-bottom: 1rem; /* Reduce space below paragraphs */
             text-align: left; /* Left-align the text */
         }
-        
+        .about-container a {
+            color: #62829e; /* Choose your preferred color (e.g., Dodger Blue) */
+            text-decoration: none; /* Removes underline by default */
+        }
+
+        .about-container a:hover {
+            color: #455a6d; /* Choose a hover color */
+            text-decoration: underline; /* Add underline on hover */
+        }
         /* Contact */
         .contact h1 {
             margin-top: 6rem; /* Space above the header */
@@ -180,6 +188,15 @@
             margin-top: 0; /* Remove unnecessary space above the paragraph */
             margin-bottom: 1rem; /* Reduce space below paragraphs */
             text-align: left; /* Left-align the text */
+        }
+        .contact a {
+            color: #62829e; /* Choose your preferred color (e.g., Dodger Blue) */
+            text-decoration: none; /* Removes underline by default */
+        }
+
+        .about a:hover {
+            color: #455a6d; /* Choose a hover color */
+            text-decoration: underline; /* Add underline on hover */
         }
                         /* Desktop-specific adjustments */
         @media (min-width: 1024px) and (max-width: 2700px) {
@@ -279,7 +296,7 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
-        /* Specific styles for hyperlinks in the Projects section */
+        /* Specific styles for hyperlinks in the Project cards */
         .popup a {
             color: #62829e; /* Choose your preferred color (e.g., Dodger Blue) */
             text-decoration: none; /* Removes underline by default */
@@ -289,6 +306,7 @@
             color: #455a6d; /* Choose a hover color */
             text-decoration: underline; /* Add underline on hover */
         }
+        /* Styles for links in hamburger menu */
         a {
             color: white;
             text-decoration: none;
@@ -372,7 +390,7 @@
                 <div class="about-text">
                     <h1>ABOUT</h1>
                     <p>I'm a researcher and data analyst in criminal justice and economics. My interests include government data systems, transparency, weapons, economic mobility, occupational regulation and administrative regulation. Much of my research has focused on seizures and forfeitures, and my work has been cited by Justice Gorsuch, ProPublica and other outlets.</p>
-                    <p>I work at the Council on Criminal Justice where I manage research contracts and support its commissions by analyzing and presenting data. I specialize in managing data processes and translating research findings into clear, actionable language. Before the Council, I worked for Maryland's sentencing commission and at the Institute for Justice.</p>
+                    <p>I work at the <a href="https://counciloncj.org/" target="_blank">Council on Criminal Justice</a> where I manage research contracts and support its commissions by analyzing and presenting data. I specialize in managing data processes and translating research findings into clear, actionable language. Before the Council, I worked for Maryland's sentencing commission and at the <a href="https://ij.org/" target="_blank">Institute for Justice</a>.</p>
                     <p>I live in Baltimore, MD. Things I love include playing with my pit bull mix, fitness, heavy metal, a great bargain like hosting this website on GitHub Pages for "free" and various hobby projects like making this site with ChatGPT.</p>
                 </div>
                 <div class="about-image">
