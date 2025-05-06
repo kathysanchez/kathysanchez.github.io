@@ -406,6 +406,10 @@
                 <div class="projects-p">
                     <p>Preview some of my work.</p>
                 </div>
+                <div class="project" data-project="project3">
+                    <h3>Scraper for the ATF Website</h3>
+                    <p>Annual, state-level gun trace data from the Bureau of Alcohol, Tobacco, Firearms and Explosives website.</p>
+                </div>
                 <div class="project" data-project="project1">
                     <h3>Firearm Seller Inspections</h3>
                     <p>Inspections of licensed firearm sellers since the Biden White House started its "zero tolerance" policy.</p>
@@ -437,7 +441,16 @@
             const popupContent = document.getElementById('popup-content');
 
             // Load dynamic content based on the project
-            if (projectId === 'project1') {
+            if (projectId === 'project3') {
+                popupContent.innerHTML = `
+                    <a href="https://github.com/kathysanchez/atf/blob/main/trace_scraper.py" title="Go to the web scraper code on GitHub" target="_blank" rel="noopener noreferrer"><img src="growtika-9WnjxT1NCoY-unsplash.jpg".png" alt="Image of code"></a>
+                    <h3>Scraper for the ATF Website</h3>
+                    <p>This is a web scraper and cleaning project. The Bureau of Alcohol, Tobacco, Firearms and Explosives made gun trace data publicly available on its website, including top types of firearms and calibers recovered in each state for 2020 through 2023.</p>
+                    <p>Outputs: A panel <a href="https://github.com/kathysanchez/atf/tree/main/output/scraped_data.csv" title="Go to the data on GitHub" target="_blank" rel="noopener noreferrer">dataset</a>.</p>
+                    <p>Tools: Python, Pandas, BeautifulSoup and Requests.</p>
+                    <p>Last Updated: February 2025.</p>
+                `;
+            } if (projectId === 'project1') {
                 popupContent.innerHTML = `
                     <a href="https://github.com/kathysanchez/atf/tree/main/ATF_Inspection_Figures.pdf" title="Go to the main report on GitHub" target="_blank" rel="noopener noreferrer"><img src="ATF_screenshot1.png" alt="Graph"></a>
                     <h3>Firearm Seller Inspections</h3>
