@@ -406,6 +406,10 @@
                 <div class="projects-p">
                     <p>Preview some of my work.</p>
                 </div>
+                <div class="project" data-project="project4">
+                    <h3>Mapped Weapons Incidents in the Baltimore Harbor</h3>
+                    <p>Map using Baltimore Police Department data of 911 calls for service about weapons incidents.</p>
+                </div>
                 <div class="project" data-project="project3">
                     <h3>Scraper for the ATF Website</h3>
                     <p>Annual, state-level gun trace data from the Bureau of Alcohol, Tobacco, Firearms and Explosives website.</p>
@@ -431,7 +435,7 @@
         <p><a href="https://www.linkedin.com/in/kathy-sanchez-/" target="_blank" rel="noopener noreferrer">LinkedIn</a> | <a href="https://github.com/kathysanchez" target="_blank" rel="noopener noreferrer">GitHub</a> | <a href="https://x.com/gkathysanchez" target="_blank" rel="noopener noreferrer">X</a> | <a href="https://scholar.google.com/citations?hl=en&user=egRZh9wAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
     </footer>
 
-    <!-- Overlay for Popups -->
+    <!-- Overlay for Popups -->s
     <div class="overlay"></div>
 
     <script>
@@ -441,9 +445,18 @@
             const popupContent = document.getElementById('popup-content');
 
             // Load dynamic content based on the project
-            if (projectId === 'project3') {
+            if (projectId === 'project4') {
                 popupContent.innerHTML = `
-                    <a href="https://github.com/kathysanchez/atf/blob/main/trace_scraper.py" title="Go to the web scraper code on GitHub" target="_blank" rel="noopener noreferrer"><img src="growtika-9WnjxT1NCoY-unsplash.jpg".png" alt="Image of code"></a>
+                    <a href="https://github.com/kathysanchez/bpd/blob/main/911_Weapons_Incident_Inner_Harbor_Locations_2024.html" title="Go to the map in your browser" target="_blank" rel="noopener noreferrer"><img src="bpd_map_weapons.png" alt="Image of map"></a>
+                    <h3>Mapped Weapons Incidents in the Baltimore Harbor</h3>
+                    <p>This is a mapping project in the works.</p>
+                    <p>Outputs: This will be a series of maps. See the first <a href="https://github.com/kathysanchez/bpd/blob/main/911_Weapons_Incident_Inner_Harbor_Locations_2024.html" title="Go to the data on GitHub" target="_blank" rel="noopener noreferrer">map</a>.</p>
+                    <p>Tools: Python, Pandas, GeoPandas and Folium.</p>
+                    <p>Last Updated: May 2025.</p>
+                `;
+            } if (projectId === 'project3') {
+                popupContent.innerHTML = `
+                    <a href="https://github.com/kathysanchez/atf/blob/main/trace_scraper.py" title="Go to the web scraper code on GitHub" target="_blank" rel="noopener noreferrer"><img src="growtika-9WnjxT1NCoY-unsplash.jpg"alt="Image of code"></a>
                     <h3>ATF Web Scraper</h3>
                     <p>This is a web scraping and cleaning script. The Bureau of Alcohol, Tobacco, Firearms and Explosives has gun trace data publicly available on its website, including top types of firearms and calibers recovered in each state for 2020 through 2024.</p>
                     <p>Outputs: A panel <a href="https://github.com/kathysanchez/atf/tree/main/output/scraped_data.csv" title="Go to the data on GitHub" target="_blank" rel="noopener noreferrer">dataset</a>.</p>
